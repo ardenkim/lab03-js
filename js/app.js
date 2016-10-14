@@ -6,17 +6,7 @@ But for multiples of three print "Fizz" instead of the number and for the multip
 For numbers which are multiples of both three and five print "FizzBuzz".
 */
 function problem1() {
-    for (var i=1; i <= 100; i++) {
-        if (i % 3 == 0 && i % 5 == 0) {
-            console.log("FizzBuzz");
-        } else if (i % 3 == 0) {
-            console.log("Fizz");
-        } else if (i % 5 == 0) {
-            console.log("Buzz");
-        } else {
-            console.log(i);
-        }
-    }
+    console.log("Hello, world!");
 }
 
 /* Here is the situation for problems 2-5:
@@ -71,11 +61,7 @@ Notes:
     * Javascript has a built in square root function. Look up how to use it!
     * Your function should actually update the gpa values in the students array.
 */
-function problem2() {
-    students.forEach(function(student) {
-        student.gpa = Math.sqrt(student.gpa);
-    });
-}
+
 
 /* Problem #3 - map/filter/reduce practice
 
@@ -83,23 +69,12 @@ Tori needs a list of all of the info student's last names.
 Write a function that returns a string array containing all of the student's last names.
 */
 
-function problem3() {
-    return students.map(function(student) {
-        return student.name.split(' ')[1];
-    });
-}
 
 /* Problem #4 - map/filter/reduce practice
 
 Tori has a list of all students, but she also needs a list that represents the subset of students who are graduating this year.
 Write a method that returns a list of students who are graduating this year.
 */
-function problem4() {
-    var graduatingStudents = students.filter(function(student) {
-        return student.graduating;
-    });
-    return graduatingStudents;
-}
 
 /* Problem #5 - map/filter/reduce practice
 
@@ -108,12 +83,6 @@ Use the reduce() function to compute the average GPA of info students.
 
 Note: You will need to run problem2() before you run this function, otherwise your result will be squared!
 */
-function problem5() {
-    var cumGPA = students.reduce(function(total, current) {
-        return {gpa: total.gpa + current.gpa};
-    });
-    return cumGPA.gpa / students.length;
-}
 
 /* Problem #6
 
@@ -126,20 +95,5 @@ Note:
     * If a letter isn't used by any of the student names, you don't need to include it. In other words, you can build this map dynamically.
     * Don't worry about the spaces in between the first and last names
 */
-function problem6() {
-    var frequencyCharacter = {};
-
-    students.forEach(function(student) {
-        for (var i=0; i < student.name.length; i++) {
-            var character = student.name.charAt(i);
-            if (frequencyCharacter[character]) {
-                frequencyCharacter[character]++;
-            } else {
-                frequencyCharacter[character] = 1;
-            }
-        }
-    });
-    return frequencyCharacter;
-}
 
 
