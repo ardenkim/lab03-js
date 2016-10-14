@@ -117,16 +117,29 @@ function problem5() {
 
 /* Problem #6
 
-Tori needs to know which letter of the alphabet is the most common first letter among all the iSchool student names.
-Help her out!
-
-Example: If Cameron was the only student in the iSchool, then c=1 and all the other letters would = 0 
+Tori needs to know which letters from student names are the most common.
+Use an associative array (also known as a map, dictionary, or hash table) to record the frequency of each character that you encounter in uw info student names.
+Return the frequency map (the associative array) when you are done.
 
 Note:
     * You will see a similar problem pattern on your homework
+    * If a letter isn't used by any of the student names, you don't need to include it. In other words, you can build this map dynamically.
+    * Don't worry about the spaces in between the first and last names
 */
 function problem6() {
+    var frequencyCharacter = {};
 
+    students.forEach(function(student) {
+        for (var i=0; i < student.name.length; i++) {
+            var character = student.name.charAt(i);
+            if (frequencyCharacter[character]) {
+                frequencyCharacter[character]++;
+            } else {
+                frequencyCharacter[character] = 1;
+            }
+        }
+    });
+    return frequencyCharacter;
 }
 
 
