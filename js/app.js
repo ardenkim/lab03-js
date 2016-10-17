@@ -6,7 +6,17 @@ But for multiples of three print "Fizz" instead of the number and for the multip
 For numbers which are multiples of both three and five print "FizzBuzz".
 */
 function problem1() {
-    console.log("Hello, world!");
+    for(var i = 1; i <= 100; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            console.log("FizzBuzz");
+        } else if (i % 3 == 0) {
+            console.log("Fizz");
+        } else if (i % 5 == 0) {
+            console.log("Buzz");
+        } else {
+            consolg.log(i);
+        }
+    // console.log("Hello, world!");
 }
 
 
@@ -63,6 +73,11 @@ Notes:
     * Your function should actually update the gpa values in the students array.
 */
 
+function problem2() {
+    students.forEach(function(student) {
+        student.gpa = Math.sqrt(student.gpa);
+    } );
+}
 
 /* Problem #3 - map/filter/reduce practice
 
@@ -70,7 +85,11 @@ Tori needs a list of all of the info student's last names.
 Write a function `problem3()` that uses either map(), filter(), or reduce() to return an array containing all of the student's 
 last names.
 */
-
+function problem3() {
+    return students.map(function(student) {
+        student.name.split(' ')[1];
+    });
+}
 
 /* Problem #4 - map/filter/reduce practice
 
@@ -78,8 +97,13 @@ Tori has a list of all students, but she also needs a list that represents the s
 Write a function `problem4()` that uses either map(), filter(), or reduce() to return a list of students who are graduating this 
 year.
 */
-
-
+function problem4() {
+    var graduating = students.filter(function(student) {
+        if (student.graduating) {
+            return student.graduating;
+        }
+    });
+}
 /* Problem #5 - map/filter/reduce practice
 
 Tori needs your help computing the average GPA of info students.
